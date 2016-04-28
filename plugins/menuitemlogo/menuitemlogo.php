@@ -8,12 +8,11 @@ class plgContentMenuItemLogo extends JPlugin {
 
         $app = JFactory::getApplication();
         $option = $app->input->get('option');
-        $view = $app->input->get('view');
 
         switch($option) {
 
                 case 'com_menus': {
-                    if ($app->isAdmin() && $view == 'item') {			
+                    if ($app->isAdmin()) {			
 						JForm::addFormPath(__DIR__ . '/forms');
 						$form->loadFile('menuitemlogoparams', true);
                     }
